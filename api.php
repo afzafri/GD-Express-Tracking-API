@@ -77,6 +77,11 @@ if(isset($_GET['trackingNo']))
         $trackres['message'] = "No Record Found"; 
     }
 
+    # project info
+    $trackres['info']['creator'] = "Afif Zafri (afzafri)";
+    $trackres['info']['project_page'] = "https://github.com/afzafri/GD-Express-Tracking-API";
+    $trackres['info']['date_updated'] = "22/02/2017";
+
     # output/display the JSON formatted string
     echo json_encode($trackres);
 }
