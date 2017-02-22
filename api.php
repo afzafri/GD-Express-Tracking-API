@@ -42,7 +42,11 @@ if(isset($_GET['trackingNo']))
     # execute regex
     preg_match_all($patern, $result, $parsed);  
 
-    print_r($parsed[0]);
+    # parse the table by row <tr>
+    $trpatern = "#<tr(.*?)</tr>#";
+    preg_match_all($trpatern, implode('', $parsed[0]), $tr);
+
+    print_r($tr[0]);
 }
 
 ?>
