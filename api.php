@@ -36,9 +36,13 @@ if(isset($_GET['trackingNo']))
     $httpstatus = curl_getinfo($ch, CURLINFO_HTTP_CODE); # receive http response status
     curl_close($ch);  # close curl
 
-    print_r($result);
-    echo "<br>";
-    print_r($httpstatus);
+    # regex patern. to get the table result
+    $patern = "#<table class='content1' cellpadding='1' cellspacing='0'  style=\"border: thin solid \#acacac;\" id='products'>
+([\w\W]*?)</table>#"; 
+    # execute regex
+    preg_match_all($patern, $result, $parsed);  
+
+    print_r($parsed[0]);
 }
 
 ?>
