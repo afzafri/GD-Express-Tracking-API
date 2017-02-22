@@ -76,6 +76,9 @@ if(isset($_GET['trackingNo']))
     {
         $trackres['message'] = "No Record Found"; 
     }
+
+    # output/display the JSON formatted string
+    echo json_encode($trackres);
 }
 
 ?>
