@@ -46,9 +46,15 @@ if(isset($_GET['trackingNo']))
     $trpatern = "#<tr(.*?)</tr>#";
     preg_match_all($trpatern, implode('', $parsed[0]), $tr);
 
+    # array for keeping the data
+    $trackres = array();
+    $trackres['http_code'] = $httpstatus; # set http response code into the array
+
     # checking if record found or not, by checking the number of rows available in the result table
     if(count($tr[0]) > 0)
     {
+    	$trackres['message'] = "Record Found"; # return record found if number of row > 0
+
         for($i=0;$i<count($tr[0]);$i++)
         {
             # parse the table by column <td>
@@ -60,11 +66,15 @@ if(isset($_GET['trackingNo']))
             $status = strip_tags($td[0][2]);
             $location = strip_tags($td[0][3]);
 
-            echo "<br>Date &amp; Time: ".$datetime;
-            echo "<br>Status: ".$status;
-            echo "<br>Location: ".$location;
-            echo "<br><br>";
+            # store into associative array
+            $trackres['data'][$i]['date_time'] = $datetime;
+            $trackres['data'][$i]['status'] = $status;
+            $trackres['data'][$i]['location'] = $location;
         }
+    }
+    else
+    {
+        $trackres['message'] = "No Record Found"; 
     }
 }
 
