@@ -46,7 +46,26 @@ if(isset($_GET['trackingNo']))
     $trpatern = "#<tr(.*?)</tr>#";
     preg_match_all($trpatern, implode('', $parsed[0]), $tr);
 
-    print_r($tr[0]);
+    # checking if record found or not, by checking the number of rows available in the result table
+    if(count($tr[0]) > 0)
+    {
+        for($i=0;$i<count($tr[0]);$i++)
+        {
+            # parse the table by column <td>
+            $tdpatern = "#<td>(.*?)</td>#";
+            preg_match_all($tdpatern, $tr[0][$i], $td);
+            
+            # fetch and store data in array
+            $datetime = $td[0][1];
+            $status = $td[0][2];
+            $location = $td[0][3];
+
+            echo "<br>Date &amp; Time: ".$datetime;
+            echo "<br>Status: ".$status;
+            echo "<br>Location: ".$location;
+            echo "<br><br>";
+        }
+    }
 }
 
 ?>
