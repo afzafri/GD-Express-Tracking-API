@@ -56,9 +56,9 @@ if(isset($_GET['trackingNo']))
             preg_match_all($tdpatern, $tr[0][$i], $td);
             
             # fetch and store data in array
-            $datetime = $td[0][1];
-            $status = $td[0][2];
-            $location = $td[0][3];
+            $datetime = strip_tags($td[0][1]);
+            $status = strip_tags($td[0][2]);
+            $location = strip_tags($td[0][3]);
 
             echo "<br>Date &amp; Time: ".$datetime;
             echo "<br>Status: ".$status;
