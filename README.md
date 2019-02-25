@@ -5,6 +5,9 @@
   - This is not the official API, this is actually just a "hack", or workaround for obtaining the tracking data.
   - This API will fetch data directly from the GDEX Tracking website, so if there are any problem with the site, this API will also affected. 
   
+# ATTENTION
+- This project is not working anymore. Read issue #1
+  
 # Created By
 - Afif Zafri
 - Date: 22/02/2017
