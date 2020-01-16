@@ -1,16 +1,14 @@
 # GD Express (GDEX) Tracking API
 - Return JSON formatted string of GDEX Tracking details
 - Can be use for tracking the GDEX parcel in your own project/system
-- Note: 
+- Note:
   - This is not the official API, this is actually just a "hack", or workaround for obtaining the tracking data.
-  - This API will fetch data directly from the GDEX Tracking website, so if there are any problem with the site, this API will also affected. 
-  
-# ATTENTION
-- This project is not working anymore. Read issue [#1](https://github.com/afzafri/GD-Express-Tracking-API/issues/1)
-  
+  - This API will fetch data directly from the GDEX Tracking website, so if there are any problem with the site, this API will also affected.
+
 # Created By
 - Afif Zafri
 - Date: 22/02/2017
+- Updated At: 16/01/2020
 - Contact: http://fb.me/afzafri
 
 # Installation
