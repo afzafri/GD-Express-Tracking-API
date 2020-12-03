@@ -1,6 +1,6 @@
 {
-    "name": "afzafri/jnt-express-tracking-api",
-    "description": "Return JSON formatted string of Poslaju Tracking details",
+    "name": "afzafri/gd-express-tracking-api",
+    "description": "Return JSON formatted string of GDEX Tracking details",
     "type": "library",
     "authors": [
         {
