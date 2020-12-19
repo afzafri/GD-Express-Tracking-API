@@ -12,7 +12,7 @@
 - Contact: http://fb.me/afzafri
 
 # Installation
-- Drop all files into your server
+```composer require afzafri/gd-express-tracking-api:dev-master```
 
 # Usage
 - ```http://site.com/api.php?trackingNo=CODE```
