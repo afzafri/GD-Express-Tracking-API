@@ -19,6 +19,7 @@ class GDExpressTrackingApi
         curl_setopt($ch, CURLOPT_POST, 1); # set option for POST data
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata); # set post data array
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); # receive server response
+	curl_setopt($ch, CURLOPT_TIMEOUT, 5); //timeout in seconds
         $result = curl_exec($ch); # execute curl, fetch webpage content
         $httpstatus = curl_getinfo($ch, CURLINFO_HTTP_CODE); # receive http response status
         $errormsg = (curl_error($ch)) ? curl_error($ch) : "No error"; # catch error message
